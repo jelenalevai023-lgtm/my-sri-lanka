@@ -66,6 +66,9 @@
   .nav-dropdown a:hover{background:rgba(255,255,255,.04)}
   .nav-item.has-dropdown:hover .nav-dropdown,.nav-item.has-dropdown:focus-within .nav-dropdown,.nav-item.has-dropdown.is-open .nav-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
   .nav-mobile-only{display:none}
+  .nav-burger .icon-close{display:none}
+  header.nav-open .nav-burger .icon-burger{display:none}
+  header.nav-open .nav-burger .icon-close{display:block}
 
   /* ---------- HERO (shared shell) ---------- */
   .hero{position:relative;height:min(94vh,900px);min-height:640px;overflow:hidden}
@@ -134,7 +137,7 @@
   }
   @media(max-width:820px){
     nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:10px 0;background:var(--panel);border-top:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.35)}
-    header.nav-open nav ul{display:flex}
+    header.nav-open nav > ul{display:flex}
     nav ul li a{display:block;padding:14px clamp(20px,5vw,64px)}
     .nav-drop-toggle{width:100%;justify-content:space-between}
     .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,.03);margin:0;padding:0;min-width:0;display:none}
@@ -186,7 +189,10 @@
     </nav>
     <div class="nav-tools">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-      <svg class="nav-burger nav-mobile-only" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <span class="nav-burger nav-mobile-only">
+        <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </span>
     </div>
   </div>
 </header>
