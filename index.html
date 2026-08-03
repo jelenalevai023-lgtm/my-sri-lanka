@@ -66,6 +66,9 @@
   .nav-dropdown a:hover{background:rgba(255,255,255,.04)}
   .nav-item.has-dropdown:hover .nav-dropdown,.nav-item.has-dropdown:focus-within .nav-dropdown,.nav-item.has-dropdown.is-open .nav-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
   .nav-mobile-only{display:none}
+  .nav-burger .icon-close{display:none}
+  header.nav-open .nav-burger .icon-burger{display:none}
+  header.nav-open .nav-burger .icon-close{display:block}
 
   /* ---------- HERO ---------- */
   .hero{position:relative;height:min(94vh,900px);min-height:640px;overflow:hidden}
@@ -153,10 +156,10 @@
   .news .content{padding:56px 52px}
   .news .title{font-size:clamp(28px,3vw,36px);margin-top:2px;line-height:1.12}
   .news form{display:flex;margin-top:30px;max-width:420px}
-  .news input{flex:1;min-width:0;background:#0f0c09;border:1px solid var(--line);border-right:none;color:var(--white);padding:15px 18px;font-family:var(--sans);font-size:13px}
+  .news input{flex:1;min-width:0;height:44px;background:#0f0c09;border:1px solid var(--line);border-right:none;color:var(--white);padding:0 18px;font-family:var(--sans);font-size:13px}
   .news input::placeholder{color:#7d766a}
   .news input:focus{outline:none;border-color:rgba(221,162,80,.5)}
-  .news button{flex:none;background:var(--green);color:var(--white);border:none;padding:0 28px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+  .news button{flex:none;height:44px;background:var(--green);color:var(--white);border:none;padding:0 28px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s}
   .news button:hover{background:var(--green-h)}
   .news .perks{display:flex;flex-direction:column;gap:16px;margin-top:34px}
   .news .perk{display:flex;align-items:center;gap:13px;font-size:13px;color:#d7d1c6;font-weight:300}
@@ -190,7 +193,7 @@
   }
   @media(max-width:820px){
     nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:10px 0;background:var(--panel);border-top:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.35)}
-    header.nav-open nav ul{display:flex}
+    header.nav-open nav > ul{display:flex}
     nav ul li a{display:block;padding:14px clamp(20px,5vw,64px)}
     .nav-drop-toggle{width:100%;justify-content:space-between}
     .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,.03);margin:0;padding:0;min-width:0;display:none}
@@ -215,7 +218,7 @@
     .hero-ctas{flex-direction:column;align-items:stretch}
     .hero-ctas .btn,.hero-ctas .btn-outline{width:100%}
     .news form{flex-direction:column;gap:10px;max-width:none}
-    .news input{border-right:1px solid var(--line)}
+    .news input{flex:none;border-right:1px solid var(--line)}
   }
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -251,7 +254,10 @@
     </nav>
     <div class="nav-tools">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-      <svg class="nav-burger nav-mobile-only" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <span class="nav-burger nav-mobile-only">
+        <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </span>
     </div>
   </div>
 </header>
