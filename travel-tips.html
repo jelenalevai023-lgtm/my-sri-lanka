@@ -42,6 +42,7 @@
 
   .eyebrow{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
   .title{font-family:var(--serif);font-weight:500;line-height:1.05;color:var(--white);letter-spacing:.01em}
+  .br-narrow{display:none}
 
   /* ---------- HEADER ---------- */
   header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:linear-gradient(to bottom,rgba(16,13,10,.82),rgba(16,13,10,.35));border-bottom:1px solid rgba(255,255,255,.04)}
@@ -66,6 +67,9 @@
   .nav-dropdown a:hover{background:rgba(255,255,255,.04)}
   .nav-item.has-dropdown:hover .nav-dropdown,.nav-item.has-dropdown:focus-within .nav-dropdown,.nav-item.has-dropdown.is-open .nav-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
   .nav-mobile-only{display:none}
+  .nav-burger .icon-close{display:none}
+  header.nav-open .nav-burger .icon-burger{display:none}
+  header.nav-open .nav-burger .icon-close{display:block}
 
   /* ---------- HERO (shared shell) ---------- */
   .hero{position:relative;height:min(94vh,900px);min-height:640px;overflow:hidden}
@@ -171,7 +175,7 @@
   }
   @media(max-width:820px){
     nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:10px 0;background:var(--panel);border-top:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.35)}
-    header.nav-open nav ul{display:flex}
+    header.nav-open nav > ul{display:flex}
     nav ul li a{display:block;padding:14px clamp(20px,5vw,64px)}
     .nav-drop-toggle{width:100%;justify-content:space-between}
     .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,.03);margin:0;padding:0;min-width:0;display:none}
@@ -189,10 +193,14 @@
     .tips{grid-template-columns:1fr}
   }
   @media(max-width:560px){
+    .br-wide{display:none}
+    .br-narrow{display:inline}
     .essentials-grid{grid-template-columns:1fr}
     .travel-cat-text{padding:32px 26px}
     .foot{grid-template-columns:1fr 1fr}
     .copy .wrap{justify-content:flex-start}
+    .news .btn{width:100%}
+    .dest-head{flex-direction:column;align-items:flex-start;gap:14px}
   }
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -227,7 +235,10 @@
     </nav>
     <div class="nav-tools">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-      <svg class="nav-burger nav-mobile-only" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <span class="nav-burger nav-mobile-only">
+        <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </span>
     </div>
   </div>
 </header>
@@ -352,7 +363,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Essential Information</span>
-      <h2 class="title">A few things worth knowing<br>before you travel.</h2>
+      <h2 class="title">A few things worth <br class="br-narrow">knowing <br class="br-wide">before <br class="br-narrow">you travel.</h2>
       <p>Every destination has its own rhythm. These quick tips will help you feel more prepared before arriving in Sri Lanka.</p>
     </div>
     <div class="essentials-grid">
