@@ -133,7 +133,13 @@
     .foot .logo{grid-column:1/-1;margin-bottom:6px}
   }
   @media(max-width:820px){
-    nav ul{display:none}
+    nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:10px 0;background:var(--panel);border-top:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+    header.nav-open nav ul{display:flex}
+    nav ul li a{display:block;padding:14px clamp(20px,5vw,64px)}
+    .nav-drop-toggle{width:100%;justify-content:space-between}
+    .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,.03);margin:0;padding:0;min-width:0;display:none}
+    .nav-item.has-dropdown.is-open .nav-dropdown{display:block}
+    .nav-dropdown a{padding:12px clamp(20px,5vw,64px) 12px calc(clamp(20px,5vw,64px) + 14px)}
     .nav-mobile-only{display:block}
     :root{--section-gap:96px}
     .destinations-hero{height:52vh}
@@ -180,15 +186,17 @@
     </nav>
     <div class="nav-tools">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-      <svg class="nav-mobile-only" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20.5C6 16.5 3 13 3 9.2 3 6.4 5.2 4.3 8 4.3c1.6 0 3.1.8 4 2 .9-1.2 2.4-2 4-2 2.8 0 5 2.1 5 4.9 0 3.8-3 7.3-9 11.3z"/></svg>
-      <svg class="nav-mobile-only" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="nav-burger nav-mobile-only" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </div>
   </div>
 </header>
 <script>
 (function(){
   var items=document.querySelectorAll('.nav-item.has-dropdown');
-  if(!items.length)return;
+  var header=document.querySelector('header');
+  var burger=document.querySelector('.nav-burger');
+  var navUl=document.querySelector('nav > ul');
+
   items.forEach(function(item){
     var toggle=item.querySelector('.nav-drop-toggle');
     toggle.addEventListener('click',function(e){
@@ -198,15 +206,37 @@
       if(!wasOpen)item.classList.add('is-open');
     });
   });
+
+  if(burger&&header){
+    burger.addEventListener('click',function(){
+      header.classList.toggle('nav-open');
+    });
+  }
+
+  if(navUl){
+    navUl.querySelectorAll('a:not(.nav-drop-toggle)').forEach(function(a){
+      a.addEventListener('click',function(){
+        if(header)header.classList.remove('nav-open');
+        items.forEach(function(item){item.classList.remove('is-open');});
+      });
+    });
+  }
+
   document.addEventListener('click',function(e){
     items.forEach(function(item){
       if(item.classList.contains('is-open')&&!item.contains(e.target)){
         item.classList.remove('is-open');
       }
     });
+    if(header&&header.classList.contains('nav-open')&&!header.contains(e.target)){
+      header.classList.remove('nav-open');
+    }
   });
   document.addEventListener('keydown',function(e){
-    if(e.key==='Escape')items.forEach(function(item){item.classList.remove('is-open');});
+    if(e.key==='Escape'){
+      items.forEach(function(item){item.classList.remove('is-open');});
+      if(header)header.classList.remove('nav-open');
+    }
   });
 })();
 </script>
