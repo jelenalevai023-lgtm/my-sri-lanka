@@ -167,8 +167,9 @@
 
   /* ---------- FOOTER ---------- */
   footer{margin-top:var(--section-gap);border-top:1px solid var(--line);background:#0c0a07}
-  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:40px;padding-block:64px}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-block:64px}
   .foot .logo .mark{font-size:21px}
+  .foot-brand p{margin-top:16px;max-width:260px;color:var(--muted);font-weight:300;font-size:13px;line-height:1.65}
   .foot h5{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
   .foot ul{list-style:none;display:flex;flex-direction:column;gap:11px}
   .foot li a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
@@ -178,7 +179,9 @@
   .foot .follow a:hover{color:var(--gold);border-color:rgba(221,162,80,.4)}
   .foot .follow svg{width:16px;height:16px}
   .copy{border-top:1px solid var(--line);padding-block:22px;font-size:12px;color:#7d766a}
-  .copy .wrap{display:flex;justify-content:flex-end}
+  .copy .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .copy-links a{color:#7d766a;text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+  .copy-links a:hover{color:var(--white)}
 
   .scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
@@ -214,7 +217,7 @@
     .explore-intro-cards{grid-template-columns:1fr}
     .dest-head{flex-direction:column;align-items:flex-start;gap:14px}
     .foot{grid-template-columns:1fr 1fr}
-    .copy .wrap{justify-content:flex-start}
+    .copy .wrap{flex-direction:column;align-items:flex-start;gap:8px}
     .hero-ctas{flex-direction:column;align-items:stretch}
     .hero-ctas .btn,.hero-ctas .btn-outline{width:100%}
     .news form{flex-direction:column;gap:10px;max-width:none}
@@ -240,7 +243,7 @@
         <li><a href="destinations.html">Destinations</a></li>
         <li><a href="explore.html">Explore</a></li>
         <li><a href="travel-tips.html">Travel Tips</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li class="nav-item has-dropdown">
           <a href="travel-tips.html#guide" class="nav-drop-toggle">Guides
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -614,9 +617,9 @@
           <button type="submit">Subscribe</button>
         </form>
         <div class="perks">
-          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l16 8-16 8 4-8z"/></svg>Travel tips &amp; guides</div>
-          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>Exclusive itineraries</div>
-          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5 5.5.8-4 4 1 5.5L12 20l-5 2.3 1-5.5-4-4 5.5-.8z"/></svg>Special offers &amp; more</div>
+          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l16 8-16 8 4-8z"/></svg>New travel articles</div>
+          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>Hidden places &amp; local tips</div>
+          <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5 5.5.8-4 4 1 5.5L12 20l-5 2.3 1-5.5-4-4 5.5-.8z"/></svg>Travel updates &amp; inspiration</div>
         </div>
       </div>
     </div>
@@ -628,35 +631,29 @@
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap foot">
-    <a class="logo" href="#">
-      <span class="mark">MY&nbsp;<b>SRI&nbsp;LANKA</b>
-        <svg class="palm" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M24 224s40-32 104-32 104 32 104 32"/><path d="M176 72c-80 40-48 120-48 120"/><path d="M176 72s-17.2-8.58-36-8c-17.46.57-36.3 9.19-44 40"/><path d="M176 72S160 9.5 104 40.75"/><path d="M232 136c0-64-56-64-56-64"/><path d="M176 72s16-52.9 56-22.67"/><path d="M184 136s22.61-32-7.95-64"/><circle cx="52" cy="140" r="20"/></svg>
-      </span>
-      <span class="sub">LAND OF UNTOUCHED NATURE</span>
-    </a>
-    <div>
-      <h5>Explore</h5>
-      <ul><li><a href="destinations.html">Destinations</a></li><li><a href="explore.html">Explore</a></li><li><a href="travel-tips.html">Travel Tips</a></li></ul>
+    <div class="foot-brand">
+      <a class="logo" href="#">
+        <span class="mark">MY&nbsp;<b>SRI&nbsp;LANKA</b>
+          <svg class="palm" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M24 224s40-32 104-32 104 32 104 32"/><path d="M176 72c-80 40-48 120-48 120"/><path d="M176 72s-17.2-8.58-36-8c-17.46.57-36.3 9.19-44 40"/><path d="M176 72S160 9.5 104 40.75"/><path d="M232 136c0-64-56-64-56-64"/><path d="M176 72s16-52.9 56-22.67"/><path d="M184 136s22.61-32-7.95-64"/><circle cx="52" cy="140" r="20"/></svg>
+        </span>
+        <span class="sub">LAND OF UNTOUCHED NATURE</span>
+      </a>
+      <p>Created from a journey that changed my life, this space is where I share the experiences that made me fall in love with Sri Lanka.</p>
     </div>
     <div>
-      <h5>Information</h5>
-      <ul><li><a href="#">About Sri Lanka</a></li><li><a href="#">Getting Around</a></li><li><a href="#">Budget Guide</a></li><li><a href="#">FAQ</a></li></ul>
+      <h5>Quick Links</h5>
+      <ul><li><a href="destinations.html">Destinations</a></li><li><a href="explore.html">Explore</a></li><li><a href="travel-tips.html">Travel Tips</a></li><li><a href="about.html">About</a></li></ul>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul><li><a href="#">Temples</a></li><li><a href="#">Elephant Sanctuary</a></li><li><a href="#">Turtles</a></li><li><a href="#">Safari</a></li></ul>
     </div>
     <div>
       <h5>About</h5>
-      <ul><li><a href="#">About Me</a></li><li><a href="#">Contact</a></li><li><a href="#">Work With Me</a></li><li><a href="#">Privacy Policy</a></li></ul>
-    </div>
-    <div>
-      <h5>Follow Along</h5>
-      <div class="follow">
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5h2V5.5h-2.3C11 5.5 10 7 10 9v1.5H8V13h2v6h3v-6h2.2l.4-2.5H13V9.2c0-.5.2-.7.8-.7z"/></svg></a>
-        <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 0 0-3.3 17.4c-.1-.7-.1-1.9 0-2.7l1-4.4s-.3-.5-.3-1.3c0-1.3.8-2.3 1.7-2.3.8 0 1.2.6 1.2 1.3 0 .8-.5 2-.8 3.1-.2.9.5 1.6 1.4 1.6 1.6 0 2.8-1.7 2.8-4.1 0-2.2-1.5-3.7-3.8-3.7-2.6 0-4.1 1.9-4.1 3.9 0 .8.3 1.6.7 2 .1.1.1.1.1.3l-.3 1c0 .2-.2.2-.3.1-1.1-.5-1.8-2.1-1.8-3.4 0-2.8 2-5.3 5.8-5.3 3 0 5.4 2.2 5.4 5.1 0 3-1.9 5.5-4.6 5.5-.9 0-1.7-.5-2-1l-.5 2c-.2.8-.7 1.7-1 2.3A9 9 0 1 0 12 3z"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2c-.2-1.1-.9-1.8-2-2C18 6 12 6 12 6s-6 0-8 .2c-1.1.2-1.8.9-2 2C1.8 9.5 1.8 12 1.8 12s0 2.5.2 3.8c.2 1.1.9 1.8 2 2C6 18 12 18 12 18s6 0 8-.2c1.1-.2 1.8-.9 2-2 .2-1.3.2-3.8.2-3.8s0-2.5-.2-3.8zM10 15V9l5 3z"/></svg></a>
-      </div>
+      <ul><li><a href="about.html">About Me</a></li><li><a href="#">Contact</a></li><li><a href="#">Work With Me</a></li></ul>
     </div>
   </div>
-  <div class="copy"><div class="wrap">© 2024 My Sri Lanka. All rights reserved.</div></div>
+  <div class="copy"><div class="wrap"><span>© 2026 My Sri Lanka. All rights reserved.</span><div class="copy-links"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></div></div></div>
 </footer>
 
 </body>
