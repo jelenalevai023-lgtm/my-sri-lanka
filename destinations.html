@@ -78,7 +78,7 @@
 
   /* ---------- SECTION SHELL ---------- */
   main > section{margin-top:var(--section-gap)}
-  .sec-head{display:flex;flex-direction:column;gap:16px}
+  .sec-head{display:flex;flex-direction:column;gap:8px}
 
   /* ---------- DESTINATIONS HERO (own variant, mirrors Explore hero) ---------- */
   .destinations-hero{height:64vh;min-height:440px;max-height:620px;overflow:hidden}
@@ -87,12 +87,12 @@
   .destinations-hero-inner{position:relative;z-index:3;height:100%;display:flex;align-items:center;padding-block:40px}
   .destinations-hero-row{display:grid;grid-template-columns:682px 340px;align-items:end;width:100%}
   .destinations-hero-copy{min-width:0}
-  .destinations-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5.6vw,64px);line-height:1.05;letter-spacing:.01em;margin-top:14px}
+  .destinations-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5.6vw,64px);line-height:1.05;letter-spacing:.01em;margin-top:8px}
   .destinations-hero h1 .script{display:inline;font-family:var(--script);font-weight:600;color:var(--gold)}
   .destinations-hero-text{flex:none;max-width:340px;color:#e3ddd2;font-weight:300;font-size:16px;line-height:1.7}
 
   /* ---------- TITLE + REGION TAGS ---------- */
-  .destinations-tags .eyebrow{display:block;text-align:center;margin-bottom:12px}
+  .destinations-tags .eyebrow{display:block;text-align:center;margin-bottom:8px}
   .destinations-journey-title{text-align:center;font-size:clamp(30px,4vw,46px)}
   .destinations-grid{margin-top:60px}
   .tag-rows{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:36px}
@@ -152,7 +152,7 @@
   @media(max-width:1080px){
     :root{--section-gap:120px}
     .foot{grid-template-columns:1fr 1fr 1fr}
-    .foot .logo{grid-column:1/-1;margin-bottom:6px}
+    .foot-brand{grid-column:1/-1;margin-bottom:6px}
   }
   @media(max-width:820px){
     nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:10px 0;background:var(--panel);border-top:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.35)}
@@ -160,10 +160,10 @@
     nav ul li a{display:block;padding:14px clamp(20px,5vw,64px)}
     .nav-drop-toggle{width:100%;justify-content:space-between}
     .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,.03);margin:0;padding:0;min-width:0;display:none}
-    .nav-item.has-dropdown.is-open .nav-dropdown{display:block}
+    .nav-item.has-dropdown.is-open .nav-dropdown{display:block;transform:none}
     .nav-dropdown a{padding:12px clamp(20px,5vw,64px) 12px calc(clamp(20px,5vw,64px) + 14px)}
     .nav-mobile-only{display:block}
-    :root{--section-gap:96px}
+    :root{--section-gap:80px}
     .destinations-hero{height:52vh}
     .destinations-hero-row{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
     .news{grid-template-columns:1fr}
@@ -171,10 +171,10 @@
     .news .content{padding:40px 30px}
   }
   @media(max-width:560px){
-    .explore-cards{grid-template-columns:1fr}
+    .explore-cards{grid-template-columns:1fr;row-gap:40px}
     .excard-label{width:200px;margin-top:-28px;padding:12px 16px}
     .excard-label span{font-size:18px}
-    .foot{grid-template-columns:1fr 1fr}
+    .foot{grid-template-columns:1fr;gap:36px}
     .copy .wrap{flex-direction:column;align-items:flex-start;gap:8px}
     .tag-row{gap:8px 10px}
     .news form{flex-direction:column;gap:10px;max-width:none}
@@ -199,7 +199,7 @@
         <li><a href="destinations.html" class="active">Destinations</a></li>
         <li><a href="explore.html">Explore</a></li>
         <li><a href="travel-tips.html">Travel Tips</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About Me</a></li>
         <li class="nav-item has-dropdown">
           <a href="travel-tips.html#guide" class="nav-drop-toggle">Guides
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -302,7 +302,8 @@
       <div class="tag-row regions">
         <a href="#">Cultural Triangle</a><span class="sep">|</span>
         <a href="#">East Coast</a><span class="sep">|</span>
-        <a href="#">North Sri Lanka</a>
+        <a href="#">North Sri Lanka</a><span class="sep">|</span>
+        <a href="#">Hidden Gems</a>
       </div>
     </div>
   </div>
