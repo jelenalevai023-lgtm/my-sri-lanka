@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — My Sri Lanka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#100d0a;
+    --bg-2:#16130e;
+    --panel:#1b1712;
+    --gold:#dda250;
+    --gold-soft:#e6b871;
+    --green:#6d7a39;
+    --green-h:#7e8d45;
+    --green-a:#5d6830;
+    --white:#f4efe6;
+    --muted:#a9a294;
+    --line:rgba(255,255,255,.09);
+    --section-gap:160px;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --script:'Dancing Script',cursive;
+    --sans:'Montserrat',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(20px,5vw,64px)}
+
+  .eyebrow{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+  .title{font-family:var(--serif);font-weight:500;line-height:1.05;color:var(--white);letter-spacing:.01em}
+  .br-narrow{display:none}
+
+  /* ---------- HEADER ---------- */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:linear-gradient(to bottom,rgba(16,13,10,.82),rgba(16,13,10,.35));border-bottom:1px solid rgba(255,255,255,.04)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:82px}
+  .logo{display:flex;flex-direction:column;line-height:1}
+  .logo .mark{display:flex;align-items:center;gap:8px;font-family:var(--serif);font-weight:600;font-size:23px;letter-spacing:.08em}
+  .logo .mark b{color:var(--gold);font-weight:600}
+  .logo .sub{font-size:8.5px;letter-spacing:.34em;color:var(--muted);margin-top:5px;margin-left:1px}
+  .palm{width:22px;height:22px;color:var(--gold);flex:none}
+  nav ul{display:flex;gap:34px;list-style:none}
+  nav a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7d1c6;transition:color .2s}
+  nav a:hover,nav a.active{color:var(--gold)}
+  .nav-tools{display:flex;align-items:center;gap:22px;color:#d7d1c6}
+  .nav-tools svg{width:19px;height:19px;cursor:pointer;transition:color .2s}
+  .nav-tools svg:hover{color:var(--gold)}
+  .nav-item.has-dropdown{position:relative}
+  .nav-dropdown{display:block;position:absolute;top:100%;left:50%;min-width:168px;margin:0;padding:10px 0;list-style:none;background:var(--panel);border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:opacity .25s ease,transform .25s ease,visibility .25s ease;z-index:60}
+  .nav-dropdown li{display:block}
+  .nav-dropdown a{display:block;padding:9px 22px;font-size:10px;white-space:nowrap;transition:color .2s,background .2s}
+  .nav-drop-toggle{display:inline-flex;align-items:center;gap:6px}
+  .nav-drop-toggle svg{width:9px;height:9px;flex:none;transition:transform .25s ease}
+  .nav-item.has-dropdown:hover:not(.force-closed) .nav-drop-toggle svg,.nav-item.has-dropdown:focus-within:not(.force-closed) .nav-drop-toggle svg,.nav-item.has-dropdown.is-open .nav-drop-toggle svg{transform:rotate(180deg)}
+  .nav-dropdown a:hover{background:rgba(255,255,255,.04)}
+  .nav-item.has-dropdown:hover:not(.force-closed) .nav-dropdown,.nav-item.has-dropdown:focus-within:not(.force-closed) .nav-dropdown,.nav-item.has-dropdown.is-open .nav-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .nav-mobile-only{display:none}
+  .nav-burger .icon-close{display:none}
+  header.nav-open .nav-burger .icon-burger{display:none}
+  header.nav-open .nav-burger .icon-close{display:block}
+
+  /* ---------- SECTION SHELL ---------- */
+  main > section{margin-top:var(--section-gap)}
+  .sec-head{display:flex;flex-direction:column;gap:8px}
+  .sec-head p{max-width:560px;color:var(--muted);font-weight:300;font-size:15px;line-height:1.7}
+
+  /* ---------- LEGAL PAGE (Privacy Policy / Terms) ---------- */
+  .legal-hero{padding:120px 0 56px;text-align:center}
+  .legal-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.6vw,64px);line-height:1.05;letter-spacing:.01em;color:var(--white)}
+  .legal-hero .legal-meta{margin-top:14px;font-family:var(--sans);font-weight:400;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);opacity:.6}
+
+  .legal-col{max-width:640px;margin:0 auto}
+  .legal-col section{margin-top:64px}
+  .legal-col section:first-child{margin-top:0}
+  .legal-col h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.8vw,32px);line-height:1.15;letter-spacing:.01em;color:var(--white)}
+  .legal-col h3{font-family:var(--serif);font-weight:500;font-size:clamp(19px,2vw,22px);line-height:1.2;letter-spacing:.01em;color:var(--white);margin-top:28px}
+  .legal-col p{margin-top:14px;color:var(--muted);font-weight:300;font-size:15px;line-height:1.75}
+  .legal-col h2 + p,.legal-col h3 + p{margin-top:14px}
+  .legal-col ul{margin-top:14px;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .legal-col li{position:relative;padding-left:20px;color:var(--muted);font-weight:300;font-size:15px;line-height:1.7}
+  .legal-col li::before{content:'';position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+  .legal-outro{margin-top:64px;padding-top:40px;border-top:1px solid var(--line)}
+  .legal-outro .lead{font-family:var(--serif);font-style:italic;font-weight:500;font-size:20px;color:var(--gold-soft)}
+  .legal-outro p{margin-top:14px}
+
+  /* ---------- BUTTON ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:220px;height:44px;background:var(--green);color:var(--white);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:background .2s}
+  .btn:hover{background:var(--green-h)}
+  .btn:active{background:var(--green-a)}
+  .btn svg{width:14px;height:14px;flex:none}
+
+  /* ---------- FOOTER ---------- */
+  footer{margin-top:var(--section-gap);border-top:1px solid var(--line);background:#0c0a07}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-block:64px}
+  .foot .logo .mark{font-size:21px}
+  .foot-brand p{margin-top:16px;max-width:260px;color:var(--muted);font-weight:300;font-size:13px;line-height:1.65}
+  .foot h5{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  .foot ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .foot li a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
+  .foot li a:hover{color:var(--white)}
+  .foot .follow{display:flex;gap:12px;margin-top:2px}
+  .foot .follow a{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);color:var(--muted);transition:.2s}
+  .foot .follow a:hover{color:var(--gold);border-color:rgba(221,162,80,.4)}
+  .foot .follow svg{width:16px;height:16px}
+  .copy{border-top:1px solid var(--line);padding-block:22px;font-size:12px;color:#7d766a}
+  .copy .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .copy-links a{color:#7d766a;text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+  .copy-links a:hover{color:var(--white)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1080px){
+    :root{--section-gap:120px}
+    .foot{grid-template-columns:1fr 1fr 1fr}
+    .foot-brand{grid-column:1/-1;margin-bottom:6px}
+  }
+  @media(max-width:820px){
+    nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:10px 0;background:var(--panel);border-top:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+    header.nav-open nav > ul{display:flex}
+    nav ul li a{display:block;padding:14px clamp(20px,5vw,64px)}
+    .nav-drop-toggle{width:100%;justify-content:space-between}
+    .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:rgba(255,255,255,.03);margin:0;padding:0;min-width:0;display:none}
+    .nav-item.has-dropdown.is-open .nav-dropdown{display:block;transform:none}
+    .nav-dropdown a{padding:12px clamp(20px,5vw,64px) 12px calc(clamp(20px,5vw,64px) + 14px)}
+    .nav-mobile-only{display:block}
+    :root{--section-gap:80px}
+    .legal-hero{padding:80px 0 40px}
+    .legal-col section{margin-top:48px}
+    .legal-outro{margin-top:48px}
+  }
+  @media(max-width:560px){
+    .br-wide{display:none}
+    .br-narrow{display:inline}
+    .foot{grid-template-columns:1fr;gap:36px}
+    .copy .wrap{flex-direction:column;align-items:flex-start;gap:8px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header id="site-header"></header>
+<script src="partials.js"></script>
+
+<!-- ============ PRIVACY POLICY ============ -->
+<section class="legal-hero">
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <p class="legal-meta">Last updated: August 2026</p>
+  </div>
+</section>
+
+<main>
+  <section class="legal-body">
+    <div class="wrap">
+      <div class="legal-col">
+
+        <section>
+          <h2>Your Privacy Matters</h2>
+          <p>Welcome to My Sri Lanka.</p>
+          <p>Your privacy is important to us. This Privacy Policy explains what information we collect, how we use it, and how we protect it when you visit our website.</p>
+          <p>By using this website, you agree to the practices described in this Privacy Policy.</p>
+        </section>
+
+        <section>
+          <h2>Information We Collect</h2>
+          <p>Most of the content on My Sri Lanka is available without creating an account or providing personal information.</p>
+          <p>However, we may collect limited information in the following situations.</p>
+
+          <h3>Information You Provide</h3>
+          <p>If you choose to subscribe to our newsletter or contact us, you may provide information such as:</p>
+          <ul>
+            <li>Your name (optional)</li>
+            <li>Your email address</li>
+            <li>Any information you include in your message</li>
+          </ul>
+          <p>We only collect information that you voluntarily provide.</p>
+
+          <h3>Information Collected Automatically</h3>
+          <p>Like most websites, we may automatically collect certain technical information, including:</p>
+          <ul>
+            <li>Browser type</li>
+            <li>Device type</li>
+            <li>Operating system</li>
+            <li>Pages visited</li>
+            <li>Time spent on the website</li>
+            <li>Referring website</li>
+            <li>General geographic location (country or region)</li>
+          </ul>
+          <p>This information helps us understand how visitors use the website and improve the overall experience.</p>
+        </section>
+
+        <section>
+          <h2>How We Use Your Information</h2>
+          <p>The information we collect may be used to:</p>
+          <ul>
+            <li>Provide and improve our content</li>
+            <li>Respond to your messages or questions</li>
+            <li>Send newsletters if you have subscribed</li>
+            <li>Analyze website traffic and performance</li>
+            <li>Improve user experience</li>
+            <li>Maintain website security</li>
+          </ul>
+          <p>We never sell your personal information to third parties.</p>
+        </section>
+
+        <section>
+          <h2>Cookies</h2>
+          <p>This website may use cookies to improve your browsing experience.</p>
+          <p>Cookies are small text files stored on your device that help remember your preferences and collect anonymous analytics data.</p>
+          <p>You can disable cookies through your browser settings at any time. Please note that some features of the website may not function as intended if cookies are disabled.</p>
+        </section>
+
+        <section>
+          <h2>Analytics</h2>
+          <p>We may use website analytics tools, such as Google Analytics, to better understand how visitors interact with our content.</p>
+          <p>These services may collect anonymous information such as:</p>
+          <ul>
+            <li>Pages visited</li>
+            <li>Session duration</li>
+            <li>Device information</li>
+            <li>Approximate location</li>
+          </ul>
+          <p>This data helps us improve the website and create better travel content.</p>
+        </section>
+
+        <section>
+          <h2>Newsletter</h2>
+          <p>If you subscribe to our newsletter, we will use your email address only to send updates related to My Sri Lanka, including:</p>
+          <ul>
+            <li>New travel articles</li>
+            <li>Destination guides</li>
+            <li>Travel tips</li>
+            <li>Future premium travel resources</li>
+          </ul>
+          <p>You may unsubscribe at any time by clicking the unsubscribe link included in every email.</p>
+        </section>
+
+        <section>
+          <h2>Third-Party Links</h2>
+          <p>Our website may contain links to third-party websites.</p>
+          <p>We are not responsible for the privacy practices or content of external websites. We encourage you to review their privacy policies before providing any personal information.</p>
+        </section>
+
+        <section>
+          <h2>Copyright</h2>
+          <p>Photos, articles, guides, and other original content published on My Sri Lanka are protected by copyright unless otherwise stated.</p>
+          <p>Some images used on the website may come from licensed or royalty-free sources and remain subject to their respective licenses.</p>
+        </section>
+
+        <section>
+          <h2>Data Security</h2>
+          <p>We take reasonable measures to protect the information you provide from unauthorized access, disclosure, alteration, or destruction.</p>
+          <p>While no method of online transmission or storage is completely secure, we strive to keep your information as safe as possible.</p>
+        </section>
+
+        <section>
+          <h2>Children's Privacy</h2>
+          <p>My Sri Lanka is intended for a general audience and is not directed toward children under the age of 13.</p>
+          <p>We do not knowingly collect personal information from children.</p>
+          <p>If you believe that a child has provided personal information through this website, please let us know through the Contact page so we can remove it promptly.</p>
+        </section>
+
+        <section>
+          <h2>Your Rights</h2>
+          <p>Depending on your location, you may have the right to:</p>
+          <ul>
+            <li>Request access to your personal information</li>
+            <li>Request correction of inaccurate information</li>
+            <li>Request deletion of your personal information</li>
+            <li>Withdraw your consent to receive newsletters</li>
+            <li>Request information about how your data is processed</li>
+          </ul>
+          <p>To exercise any of these rights, please contact us through the Contact page on this website.</p>
+        </section>
+
+        <section>
+          <h2>Changes to This Privacy Policy</h2>
+          <p>We may update this Privacy Policy from time to time to reflect changes to the website, legal requirements, or new services.</p>
+          <p>Any updates will be published on this page together with the revised "Last updated" date.</p>
+        </section>
+
+        <section>
+          <h2>Contact Us</h2>
+          <p>If you have any questions regarding this Privacy Policy, please feel free to get in touch through the Contact page on this website.</p>
+        </section>
+
+        <div class="legal-outro">
+          <p class="lead">Thank you for trusting My Sri Lanka.</p>
+          <p>This website was created from a genuine love for Sri Lanka and a desire to help travelers discover its beauty with confidence. We are committed to protecting your privacy while helping you plan unforgettable journeys.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+</body>
+</html>
