@@ -247,7 +247,7 @@
     var toggle=item.querySelector('.nav-drop-toggle');
     toggle.addEventListener('click',function(e){
       e.preventDefault();
-      var wasOpen=item.classList.contains('is-open')||item.matches(':hover, :focus-within');
+      var wasOpen=item.classList.contains('is-open')||item.matches(':hover');
       items.forEach(function(other){other.classList.remove('is-open');other.classList.remove('force-closed');});
       if(!wasOpen){
         item.classList.add('is-open');
