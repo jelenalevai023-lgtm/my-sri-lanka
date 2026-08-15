@@ -243,7 +243,7 @@
     var toggle=item.querySelector('.nav-drop-toggle');
     toggle.addEventListener('click',function(e){
       e.preventDefault();
-      var wasOpen=item.classList.contains('is-open')||item.matches(':hover, :focus-within');
+      var wasOpen=item.classList.contains('is-open')||item.matches(':hover');
       items.forEach(function(other){other.classList.remove('is-open');other.classList.remove('force-closed');});
       if(!wasOpen){
         item.classList.add('is-open');
@@ -298,7 +298,7 @@
     <div class="cultural-triangle-hero-row">
       <div class="cultural-triangle-hero-copy">
         <span class="eyebrow">The Cultural Triangle</span>
-        <h1>Where ancient <span class="script">kingdoms</span> come alive</h1>
+        <h1>Where ancient <span class="script">kingdoms</span> come alive.</h1>
       </div>
       <p class="cultural-triangle-hero-text">Step into the heart of Sri Lanka&rsquo;s ancient past, where sacred cities, towering dagobas and legendary ruins tell stories shaped by centuries of history.</p>
     </div>
@@ -312,7 +312,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Beyond the Ruins</span>
-      <h2 class="title">A journey through the island&rsquo;s&nbsp;past</h2>
+      <h2 class="title">A journey through the island&rsquo;s&nbsp;past.</h2>
       <p>Ancient cities, sacred temples and towering dagobas reveal the stories of kingdoms that shaped the island for centuries.</p>
     </div>
   </div>
