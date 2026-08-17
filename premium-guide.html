@@ -64,9 +64,9 @@
   .nav-dropdown a{display:block;padding:9px 22px;font-size:10px;white-space:nowrap;transition:color .2s,background .2s}
   .nav-drop-toggle{display:inline-flex;align-items:center;gap:6px}
   .nav-drop-toggle svg{width:9px;height:9px;flex:none;transition:transform .25s ease}
-  .nav-item.has-dropdown:hover:not(.force-closed) .nav-drop-toggle svg,.nav-item.has-dropdown:focus-within:not(.force-closed) .nav-drop-toggle svg,.nav-item.has-dropdown.is-open .nav-drop-toggle svg{transform:rotate(180deg)}
+  .nav-item.has-dropdown.is-open .nav-drop-toggle svg{transform:rotate(180deg)}
   .nav-dropdown a:hover{background:rgba(255,255,255,.04)}
-  .nav-item.has-dropdown:hover:not(.force-closed) .nav-dropdown,.nav-item.has-dropdown:focus-within:not(.force-closed) .nav-dropdown,.nav-item.has-dropdown.is-open .nav-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .nav-item.has-dropdown.is-open .nav-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
   .nav-mobile-only{display:none}
   .nav-burger .icon-close{display:none}
   header.nav-open .nav-burger .icon-burger{display:none}
@@ -243,22 +243,18 @@
     var toggle=item.querySelector('.nav-drop-toggle');
     toggle.addEventListener('click',function(e){
       e.preventDefault();
-      var wasOpen=item.classList.contains('is-open')||(window.matchMedia('(hover:hover)').matches&&item.matches(':hover'));
-      items.forEach(function(other){other.classList.remove('is-open');other.classList.remove('force-closed');});
+      var wasOpen=item.classList.contains('is-open');
+      items.forEach(function(other){other.classList.remove('is-open');});
       if(!wasOpen){
         item.classList.add('is-open');
-      }else{
-        item.classList.add('force-closed');
       }
-    });
-    item.addEventListener('mouseleave',function(){
-      item.classList.remove('force-closed');
     });
   });
 
   if(burger&&header){
     burger.addEventListener('click',function(){
       header.classList.toggle('nav-open');
+      items.forEach(function(item){item.classList.remove('is-open');});
     });
   }
 
