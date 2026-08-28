@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Lanka Hill Country: Ella &amp; Nuwara Eliya — My Sri Lanka</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60LBVX5WZG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-60LBVX5WZG');
+</script>
 <meta name="description" content="Tea plantations, misty mountains and cool air — explore Sri Lanka's Central Highlands, from Nuwara Eliya and Ella to Horton Plains National Park.">
 <link rel="canonical" href="https://my-sri-lanka.jelenalevai023.workers.dev/central-highlands.html">
 <meta property="og:type" content="website">
@@ -154,12 +164,17 @@
   .news .perks{display:flex;flex-direction:column;gap:16px;margin-top:34px}
   .news .perk{display:flex;align-items:center;gap:13px;font-size:13px;color:#d7d1c6;font-weight:300}
   .news .perk svg{width:18px;height:18px;color:var(--gold);flex:none}
+  .news-msg{display:none;margin-top:14px;max-width:420px;font-size:13px;font-weight:300;line-height:1.6;color:var(--gold)}
+  .news-msg.is-visible{display:block}
+  .news button[disabled]{opacity:.6;cursor:not-allowed}
 
   /* ---------- FOOTER ---------- */
   footer{margin-top:var(--section-gap);border-top:1px solid var(--line);background:#0c0a07}
   .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-block:64px}
   .foot .logo .mark{font-size:21px}
   .foot-brand p{margin-top:16px;max-width:260px;color:var(--muted);font-weight:300;font-size:13px;line-height:1.65}
+  .foot-brand p a{color:var(--gold);text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+  .foot-brand p a:hover{color:var(--gold-soft)}
   .foot h5{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
   .foot ul{list-style:none;display:flex;flex-direction:column;gap:11px}
   .foot li a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
@@ -363,6 +378,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
 
   toggle.addEventListener('click', function(e){
     e.preventDefault();
+    e.stopPropagation();
     if(header.classList.contains('search-open')){
       closeSearch();
     } else {
@@ -523,9 +539,11 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
       <div class="content">
         <span class="eyebrow">Stay Inspired</span>
         <h2 class="title">Get travel tips &amp; inspiration<br class="br-desktop"> straight<br class="br-mobile"> to your inbox</h2>
-        <form onsubmit="return false">
-          <input type="email" placeholder="Your email address" aria-label="Your email address">
+        <form id="newsletterForm" action="https://ae6a417f.sibforms.com/serve/MUIFAHzbEf8SE25t-glqiRAyZcnPu7s_G_93sBEnEl8raN05a2V1sPdSF1u8OH2Lh8sdmBt1qYcl2Lj_LR9BbW9ShqJ5-5s-Lq1-5tg19qK3IhvKw7hhZsr7gorcegUFzvwUj1vzXmwRoOoG5D6oIaysLQbe9BhfckIDBMOdwCJGwbo51ZXc43_H2xBjbf9M-3ANr0DfZJ_K392SMg==" method="POST" target="newsletterFrame">
+          <input type="email" name="EMAIL" placeholder="Your email address" aria-label="Your email address" required><input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off"><input type="hidden" name="locale" value="en">
           <button type="submit">Subscribe</button>
+          <p class="news-msg" id="newsletterMsg"></p>
+          <iframe name="newsletterFrame" id="newsletterFrame" style="display:none" aria-hidden="true" tabindex="-1"></iframe>
         </form>
         <div class="perks">
           <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l16 8-16 8 4-8z"/></svg>New travel articles</div>
@@ -548,7 +566,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
         </span>
         <span class="sub">LAND OF UNTOUCHED NATURE</span>
       </a>
-      <p>Created from a journey that changed my life, this space is where I share the experiences that made me fall in love with Sri Lanka.</p>
+      <p>Created from a journey that changed my life, this is where I share the experiences that made me fall in love with Sri Lanka. If this little corner of the island has inspired you, you can <a href="https://buymeacoffee.com/lemona023e" target="_blank" rel="noopener noreferrer">support my work with a coffee</a>.</p>
     </div>
     <div>
       <h5>Quick Links</h5>
@@ -560,11 +578,35 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
     </div>
     <div>
       <h5>About</h5>
-      <ul><li><a href="work-with-me.html">Work with me</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-use.html">Terms of Use</a></li></ul>
+      <ul><li><a href="work-with-me.html">Work with me</a></li><li><a href="support-my-work.html">Support my work</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-use.html">Terms of Use</a></li></ul>
     </div>
   </div>
   <div class="copy"><div class="wrap"><span>© 2026 My Sri Lanka. All rights reserved.</span><span class="copy-links">Created with ❤ by <a href="https://monikalevai.com/" target="_blank" rel="noopener noreferrer">Monika Levai</a></span></div></div>
 </footer>
 
+<script>
+(function(){
+  var form = document.getElementById('newsletterForm');
+  if(!form) return;
+  var msg = document.getElementById('newsletterMsg');
+  var frame = document.getElementById('newsletterFrame');
+  var btn = form.querySelector('button[type="submit"]');
+  var originalLabel = btn ? btn.textContent : '';
+  var submitted = false;
+  form.addEventListener('submit', function(){
+    submitted = true;
+    if(btn){ btn.disabled = true; btn.textContent = 'Subscribing...'; }
+  });
+  if(frame){
+    frame.addEventListener('load', function(){
+      if(!submitted) return;
+      submitted = false;
+      if(btn){ btn.disabled = false; btn.textContent = originalLabel; }
+      if(msg){ msg.textContent = 'Almost there! Check your inbox to confirm your subscription.'; msg.classList.add('is-visible'); }
+      form.reset();
+    });
+  }
+})();
+</script>
 </body>
 </html>
