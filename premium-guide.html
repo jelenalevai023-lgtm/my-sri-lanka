@@ -4,19 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Sri Lanka Guide — My Sri Lanka</title>
-<meta name="description" content="A downloadable Sri Lanka travel guide with practical planning tools, itineraries and insider tips — everything you need in one place.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60LBVX5WZG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-60LBVX5WZG');
+</script>
+<meta name="description" content="The Premium Sri Lanka Guide is coming soon — practical planning tips, destination recommendations and everything I wish I'd known before my own trip.">
 <link rel="canonical" href="https://my-sri-lanka.jelenalevai023.workers.dev/premium-guide.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://my-sri-lanka.jelenalevai023.workers.dev/premium-guide.html">
 <meta property="og:site_name" content="My Sri Lanka">
 <meta property="og:title" content="Premium Sri Lanka Guide — My Sri Lanka">
-<meta property="og:description" content="A downloadable Sri Lanka travel guide with practical planning tools, itineraries and insider tips — everything you need in one place.">
+<meta property="og:description" content="The Premium Sri Lanka Guide is coming soon — practical planning tips, destination recommendations and everything I wish I'd known before my own trip.">
 <meta property="og:image" content="https://my-sri-lanka.jelenalevai023.workers.dev/og/home.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Premium Sri Lanka Guide — My Sri Lanka">
-<meta name="twitter:description" content="A downloadable Sri Lanka travel guide with practical planning tools, itineraries and insider tips — everything you need in one place.">
+<meta name="twitter:description" content="The Premium Sri Lanka Guide is coming soon — practical planning tips, destination recommendations and everything I wish I'd known before my own trip.">
 <meta name="twitter:image" content="https://my-sri-lanka.jelenalevai023.workers.dev/og/home.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,6 +148,8 @@
   .guide-preview .sec-head .title{font-size:clamp(34px,4.4vw,52px);margin-top:0}
   .preview-grid{display:grid;grid-template-columns:repeat(4,1fr);align-items:start;gap:22px;margin-top:56px}
   .preview-page{aspect-ratio:3/4;border-radius:8px}
+  .preview-grid.is-solo{grid-template-columns:1fr;max-width:640px;margin-inline:auto}
+  .preview-grid.is-solo .preview-page{aspect-ratio:16/9}
   @media(min-width:1081px){
     .preview-page:nth-child(2),.preview-page:nth-child(4){margin-top:32px}
   }
@@ -162,6 +174,8 @@
   .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-block:64px}
   .foot .logo .mark{font-size:21px}
   .foot-brand p{margin-top:16px;max-width:260px;color:var(--muted);font-weight:300;font-size:13px;line-height:1.65}
+  .foot-brand p a{color:var(--gold);text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+  .foot-brand p a:hover{color:var(--gold-soft)}
   .foot h5{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
   .foot ul{list-style:none;display:flex;flex-direction:column;gap:11px}
   .foot li a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
@@ -364,6 +378,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
 
   toggle.addEventListener('click', function(e){
     e.preventDefault();
+    e.stopPropagation();
     if(header.classList.contains('search-open')){
       closeSearch();
     } else {
@@ -446,11 +461,11 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
     <div class="guide-hero-copy">
       <span class="eyebrow">Premium Sri Lanka Guide</span>
       <h1>Plan your Sri Lanka trip with confidence.</h1>
-      <p>A practical, carefully curated guide to help you plan your trip with less searching, less guesswork and more time enjoying Sri Lanka.</p>
-      <a class="btn" href="#get-guide">Get the Guide</a>
+      <p>A practical, carefully curated guide to help you plan your trip, based on real travel, real experience and everything I wish I had known before going to Sri Lanka.</p>
+      <a class="btn" href="#get-guide">Coming Soon</a>
     </div>
     <div class="guide-visual ph-placeholder">
-      <span>Guide mockup — phone/tablet with guide pages (image coming soon)</span>
+      <span>Guide preview coming soon.</span>
     </div>
   </div>
 </section>
@@ -460,7 +475,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">What's Inside</span>
-      <h2 class="title">Everything you need, in one place.</h2>
+      <h2 class="title">Everything you'll need, in one place.</h2>
     </div>
     <div class="essentials-grid">
       <div class="essential-item">
@@ -514,7 +529,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
   <div class="wrap about-story-row">
     <div class="about-story-media">
       <div class="ph-placeholder">
-        <span>Your Sri Lanka travel photo or a large travel visual (image coming soon)</span>
+        <span>Your Sri Lanka travel guide is coming soon.</span>
       </div>
     </div>
     <div class="about-story-copy">
@@ -522,7 +537,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
         <span class="eyebrow">Why This Guide?</span>
         <h2 class="title">Not just information.<br>A guide shaped by real travel.</h2>
       </div>
-      <p>I created this guide from my own experience travelling through Sri Lanka, bringing together the practical information, recommendations and little details that can make planning a trip so much easier.</p>
+      <p>This guide is being created from my own experience traveling through Sri Lanka, bringing together practical information, personal recommendations and the little details that can make planning a trip so much easier.</p>
     </div>
   </div>
 </section>
@@ -532,13 +547,10 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Preview</span>
-      <h2 class="title">Take a look inside.</h2>
+      <h2 class="title">A first look is<br class="br-narrow"> coming soon.</h2>
     </div>
-    <div class="preview-grid">
-      <div class="preview-page ph-placeholder"><span>Guide page 1</span></div>
-      <div class="preview-page ph-placeholder"><span>Guide page 2</span></div>
-      <div class="preview-page ph-placeholder"><span>Guide page 3</span></div>
-      <div class="preview-page ph-placeholder"><span>Guide page 4</span></div>
+    <div class="preview-grid is-solo">
+      <div class="preview-page ph-placeholder"><span>The guide is still in the making, but I'm already putting together everything I wish I had known before my own trip to Sri Lanka.</span></div>
     </div>
     <p class="preview-note">Designed to be practical, beautiful and easy to use while planning your trip.</p>
   </div>
@@ -558,14 +570,6 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
   </div>
 </section>
 
-<!-- ============ FINAL CTA ============ -->
-<section class="guide-final-cta" id="get-guide">
-  <div class="wrap">
-    <h2 class="title">Ready to start planning?</h2>
-    <p>Get your copy of the Premium Sri Lanka Guide.</p>
-    <a class="btn btn-wide" href="#">Get the Guide — $XX</a>
-  </div>
-</section>
 
 </main>
 
@@ -578,7 +582,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
         </span>
         <span class="sub">LAND OF UNTOUCHED NATURE</span>
       </a>
-      <p>Created from a journey that changed my life, this space is where I share the experiences that made me fall in love with Sri Lanka.</p>
+      <p>Created from a journey that changed my life, this is where I share the experiences that made me fall in love with Sri Lanka. If this little corner of the island has inspired you, you can <a href="https://buymeacoffee.com/lemona023e" target="_blank" rel="noopener noreferrer">support my work with a coffee</a>.</p>
     </div>
     <div>
       <h5>Quick Links</h5>
@@ -590,7 +594,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
     </div>
     <div>
       <h5>About</h5>
-      <ul><li><a href="work-with-me.html">Work with me</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-use.html">Terms of Use</a></li></ul>
+      <ul><li><a href="work-with-me.html">Work with me</a></li><li><a href="support-my-work.html">Support my work</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-use.html">Terms of Use</a></li></ul>
     </div>
   </div>
   <div class="copy"><div class="wrap"><span>© 2026 My Sri Lanka. All rights reserved.</span><span class="copy-links">Created with ❤ by <a href="https://monikalevai.com/" target="_blank" rel="noopener noreferrer">Monika Levai</a></span></div></div>
