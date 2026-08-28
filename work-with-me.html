@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Work with Me — My Sri Lanka</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60LBVX5WZG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-60LBVX5WZG');
+</script>
 <meta name="description" content="Partner with My Sri Lanka — local guides, travel companies and tourism-related businesses are welcome to get in touch about collaborations.">
 <link rel="canonical" href="https://my-sri-lanka.jelenalevai023.workers.dev/work-with-me.html">
 <meta property="og:type" content="website">
@@ -107,12 +117,21 @@
   .contact-form button{margin-top:4px;height:52px;background:var(--green);color:var(--white);border:none;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s}
   .contact-form button:hover{background:var(--green-h)}
   .contact-form button:active{background:var(--green-a)}
+  .contact-form button[disabled]{opacity:.6;cursor:not-allowed}
+  .form-msg{color:#d98a72;font-size:13px;font-weight:300;line-height:1.6;display:none}
+  .form-msg.is-visible{display:block}
+  .contact-success{display:none}
+  .contact-success.is-visible{display:block}
+  .contact-success-title{font-family:var(--serif);font-weight:600;font-size:26px;color:var(--gold);letter-spacing:.01em}
+  .contact-success p{margin-top:10px;color:var(--muted);font-weight:300;font-size:14px;line-height:1.7}
 
   /* ---------- FOOTER ---------- */
   footer{margin-top:var(--section-gap);border-top:1px solid var(--line);background:#0c0a07}
   .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-block:64px}
   .foot .logo .mark{font-size:21px}
   .foot-brand p{margin-top:16px;max-width:260px;color:var(--muted);font-weight:300;font-size:13px;line-height:1.65}
+  .foot-brand p a{color:var(--gold);text-decoration:underline;text-underline-offset:2px;transition:color .2s}
+  .foot-brand p a:hover{color:var(--gold-soft)}
   .foot h5{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
   .foot ul{list-style:none;display:flex;flex-direction:column;gap:11px}
   .foot li a{font-size:13px;color:var(--muted);font-weight:300;transition:color .2s}
@@ -309,6 +328,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
 
   toggle.addEventListener('click', function(e){
     e.preventDefault();
+    e.stopPropagation();
     if(header.classList.contains('search-open')){
       closeSearch();
     } else {
@@ -398,21 +418,32 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
   <section class="contact-body">
     <div class="wrap">
       <div class="contact-col">
-        <form class="contact-form">
-          <div class="field">
-            <label for="cf-name">Full Name</label>
-            <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
-          </div>
-          <div class="field">
-            <label for="cf-email">Email</label>
-            <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
-          </div>
-          <div class="field">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
-          </div>
-          <button type="submit">Send Message</button>
-        </form>
+        <div class="contact-form-group" id="contactFormGroup">
+          <form class="contact-form" id="contactForm">
+            <input type="hidden" name="access_key" value="f9b50bfe-94ac-4927-bf27-a5eb861ca997">
+            <input type="hidden" name="subject" value="New work with me inquiry from My Sri Lanka">
+            <input type="hidden" name="from_name" value="My Sri Lanka — Work With Me form">
+            <input type="checkbox" name="botcheck" style="display:none">
+            <div class="field">
+              <label for="cf-name">Full Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+            <p class="form-msg" id="contactFormMsg"></p>
+          </form>
+        </div>
+        <div class="contact-success" id="contactSuccess">
+          <p class="contact-success-title">Message sent</p>
+          <p>Thanks for your interest in working together — I'll be in touch soon.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -427,7 +458,7 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
         </span>
         <span class="sub">LAND OF UNTOUCHED NATURE</span>
       </a>
-      <p>Created from a journey that changed my life, this space is where I share the experiences that made me fall in love with Sri Lanka.</p>
+      <p>Created from a journey that changed my life, this is where I share the experiences that made me fall in love with Sri Lanka. If this little corner of the island has inspired you, you can <a href="https://buymeacoffee.com/lemona023e" target="_blank" rel="noopener noreferrer">support my work with a coffee</a>.</p>
     </div>
     <div>
       <h5>Quick Links</h5>
@@ -439,16 +470,50 @@ var SITE_SEARCH_INDEX = [{"title":"Food \u0026 Drink in Sri Lanka","url":"food-d
     </div>
     <div>
       <h5>About</h5>
-      <ul><li><a href="work-with-me.html">Work with me</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-use.html">Terms of Use</a></li></ul>
+      <ul><li><a href="work-with-me.html">Work with me</a></li><li><a href="support-my-work.html">Support my work</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-use.html">Terms of Use</a></li></ul>
     </div>
   </div>
   <div class="copy"><div class="wrap"><span>© 2026 My Sri Lanka. All rights reserved.</span><span class="copy-links">Created with ❤ by <a href="https://monikalevai.com/" target="_blank" rel="noopener noreferrer">Monika Levai</a></span></div></div>
 </footer>
 
 <script>
-document.querySelector('.contact-form').addEventListener('submit', function(e){
-  e.preventDefault();
-});
+(function(){
+  function wireContactForm(formId, groupId, successId, msgId){
+    var form = document.getElementById(formId);
+    var group = document.getElementById(groupId);
+    var success = document.getElementById(successId);
+    var msg = document.getElementById(msgId);
+    if(!form || !group || !success) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var originalLabel = btn.textContent;
+      if(msg){ msg.classList.remove('is-visible'); msg.textContent = ''; }
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      }).then(function(res){ return res.json(); }).then(function(data){
+        if(data.success){
+          group.style.display = 'none';
+          success.classList.add('is-visible');
+        } else {
+          throw new Error(data.message || 'Send failed');
+        }
+      }).catch(function(){
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+        if(msg){
+          msg.textContent = "Something went wrong — please try again, or email me directly at hello@mysrilankamagazine.com.";
+          msg.classList.add('is-visible');
+        }
+      });
+    });
+  }
+  wireContactForm('contactForm','contactFormGroup','contactSuccess','contactFormMsg');
+})();
 </script>
 
 </body>
